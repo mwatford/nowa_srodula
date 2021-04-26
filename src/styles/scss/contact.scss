@@ -1,0 +1,223 @@
+.contact {
+  background-color: #091642;
+  padding-top: 46px;
+  user-select: none;
+  max-width: 100%;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 38px;
+    letter-spacing: 7.96px;
+    line-height: 39px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  p {
+    color: #fff;
+    margin: 30px 0;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    margin-bottom: 14px;
+    background: none;
+    border: 2px solid $green;
+    padding: 10px 18px;
+    color: $green;
+    outline: none;
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    resize: none;
+
+    &::placeholder {
+      color: rgba(22, 244, 126, 0.3);
+    }
+  }
+  textarea {
+    min-width: 100%;
+  }
+
+  .button {
+    margin: 30px auto 55px auto;
+  }
+}
+
+label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: rgba(22, 244, 126, 0.3);
+  font-size: 12px;
+  width: 100%;
+  height: 22px;
+  text-transform: uppercase;
+
+  a {
+    color: $green;
+  }
+}
+
+/* Hide the browser's default checkbox */
+label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: transparent;
+  border: 2px solid $green;
+}
+
+/* On mouse-over, add a grey background color */
+label:hover input ~ .checkmark {
+  background-color: #0c5051;
+}
+
+/* When the checkbox is checked, add a blue background */
+// label input:checked ~ .checkmark {
+  // background-color: #2196f3;
+// }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+label .checkmark:after {
+  left: 25%;
+  top: 35%;
+  width: 8px;
+  height: 20px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg) translate(-50%, -50%);
+  -ms-transform: rotate(45deg) translate(-50%, -50%);
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: #091642;
+  border: 2px solid $green;
+  -webkit-text-fill-color: $green;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media screen and (min-width: $sm) {
+  .contact {
+    padding-bottom: 155px;
+
+    .button {
+      margin: 42px auto 0 0;
+    }
+
+    &__form {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .input-group {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      &:nth-of-type(1) {
+        input {
+          width: calc(100% - 7px);
+          margin-right: 7px;
+        }
+      }
+      &:nth-of-type(2) {
+        input {
+          width: calc(100% - 7px);
+          margin-left: 7px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $xl) {
+  .contact {
+    padding-top: 160px;
+
+    h1 {
+      font-size: 58px;
+      letter-spacing: 0.35px;
+      line-height: 87px;
+      font-weight: 600;
+    }
+    p {
+      margin: 30px 0 60px 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      margin-bottom: 20px;
+      padding: 21px 26px;
+      font-size: 28px;
+      line-height: 42px;
+      font-weight: 200;
+    }
+
+    textarea {
+      max-height: 200px;
+    }
+
+    .input-group {
+      &:nth-of-type(1) {
+        input {
+          width: calc(100% - 10px);
+          margin-right: 10px;
+        }
+      }
+      &:nth-of-type(2) {
+        input {
+          width: calc(100% - 10px);
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

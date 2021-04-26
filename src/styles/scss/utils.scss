@@ -1,0 +1,36 @@
+.text {
+  &--green { 
+    color: $green !important;
+  }
+  &--gray {
+    color: $gray !important;
+  }
+  &--pink {
+    color: $pink !important;
+  }
+  &--dark-blue {
+    color: $dark-background !important;
+  }
+}
+.relative {
+  position: relative;
+}
+
+.gutters {
+  padding-left: $gutters;
+  padding-right: $gutters;
+}
+
+@media screen and (min-width: $lg) {
+  .gutters {
+    padding-left: $gutters-lg;
+    padding-right: $gutters-lg;
+  }
+}
+
+@media screen and (min-width: $xl) {
+  .gutters {
+    padding-left: $gutters-xl;
+    padding-right: $gutters-xl;
+  }
+}

@@ -1,12 +1,15 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Nowa Środula`,
+    description: `"Nowa Środula to 384 pięknych mieszkań w świetnej lokalizacji. Nowoczesna technologia. Spiesz się aby wybrać najlepsze mieszkanie dla Siebie. Skontaktuj się już dzisiaj."`,
+    author: `mw`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,16 +22,46 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Nowa Środula`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        theme_color: `#16f47f`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `static/logo.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 300,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/api`,
+        name: "api",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static`,
+        name: "static",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "133886408668567",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
