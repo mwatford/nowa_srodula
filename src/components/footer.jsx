@@ -10,8 +10,8 @@ const Footer = () => {
             <address>
               <a href="mailto:buira@nowa-srodula.pl">biuro@nowa-srodula.pl</a>
               <br />
-              biuro – 795 755 920 <br />
-              sprzedaż – 795 755 924
+              Joanna – 795 755 924 <br />
+              Barbara – 661 538 871
             </address>
           </div>
           <div className="col">
