@@ -40,6 +40,9 @@ class ContactForm extends React.Component {
         data,
       })
 
+      window.gtag("event", "conversion", {
+        send_to: "AW-392310836/UWaZCLaR7_8BELTgiLsB",
+      })
       this.props.callback(true, "Otrzymaliśmy Twoją wiadomość!", false)
     } catch (error) {
       this.props.callback(true, "Wystąpił błąd!", true)

@@ -62,6 +62,21 @@ module.exports = {
         pixelId: "133886408668567",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-BZH4WC9CKX", "AW-392310836"],
+      },
+      gtagConfig: {
+        optimize_id: "OPT_COINTAINER_ID",
+        anonymize_ip: true,
+        cookie_expires: 0,
+      },
+      pluginConfig: {
+        head: true,
+        respectDNT: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

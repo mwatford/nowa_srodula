@@ -25,6 +25,7 @@ const Contact = () => {
             }
           ></ContactForm>
         ) : (
+          // refactor to load gtag
           <div>
             <p className={submitted.error ? "text--pink" : "text--green"}>
               {submitted.message}
