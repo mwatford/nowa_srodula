@@ -2,19 +2,11 @@ import React from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Links from "@/components/links"
 import SubscribeForm from "./subscribe-form"
-import Logo from "@/components/logo"
 
 const Footer = () => {
   return (
     <footer className="footer" id="footer">
       <div className="gutters">
-        <div className="row jc-sb">
-          <div className="header">
-            <h2 className="title">Zostaw swój email</h2>
-            <p>aby otrzymywać informacje o najnowszych promocjach</p>
-          </div>
-          <Logo color="#16F47F"></Logo>
-        </div>
         <SubscribeForm></SubscribeForm>
         <div className="header">
           <h2 className="title title--small">SKONTAKTUJ SIĘ Z NAMI</h2>

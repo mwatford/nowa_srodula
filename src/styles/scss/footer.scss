@@ -26,6 +26,7 @@
     p {
       color: #d4d4d4;
     }
+
     p {
       font-size: 12px;
     }
@@ -37,6 +38,7 @@
 
     &:hover {
       text-decoration: underline;
+      color: $green;
     }
   }
 
@@ -63,8 +65,8 @@
 }
 
 .subscribe {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 42px;
 
   input {
@@ -82,7 +84,12 @@
     }
   }
 
+  .logo {
+    place-self: start end;
+  }
+
   &__button {
+    grid-column: 1 / span 2;
     width: 120px;
     height: 40px;
     color: #d4d4d4;
@@ -102,6 +109,7 @@
     padding-bottom: 45px;
 
     .gutters {
+      display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
@@ -113,5 +121,41 @@
     h1 {
       margin-bottom: 33px;
     }
+
+    .links {
+      flex-direction: column;
+
+      &__item {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .subscribe {
+    order: 4;
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+
+    input {
+      width: 210px;
+    }
+
+    .logo {
+      place-self: start start;
+    }
+
+    &__button {
+      grid-column: 2;
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (min-width: $xxl) {
+  .footer {
+    padding-left: calc(2 * var(--gutters));
+    padding-right: calc(2.6 * var(--gutters));
   }
 }

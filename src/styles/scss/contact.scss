@@ -203,3 +203,10 @@ select:-webkit-autofill:focus {
     }
   }
 }
+
+@media screen and (min-width: $xxl) {
+  .contact {
+    padding-left: var(--gutters);
+    padding-right: var(--gutters);
+  }
+}

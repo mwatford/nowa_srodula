@@ -115,6 +115,11 @@
 }
 
 @media screen and (min-width: $xxl) {
+  .team {
+    padding-left: var(--gutters);
+    padding-right: var(--gutters);
+  }
+
   .teamMember {
     picture {
       width: 260px;

@@ -15,7 +15,7 @@ const Links = () => {
         </AnchorLink>
       </li>
       <li>
-        <AnchorLink className="links__item" to="/#mieszkania">
+        <AnchorLink className="links__item" to="/#karty_lokali">
           Karty lokali
         </AnchorLink>
       </li>

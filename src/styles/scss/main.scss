@@ -45,6 +45,10 @@ body {
   justify-content: space-between;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 @import "gutters.scss";
 @import "navigation.scss";
 @import "text.scss";

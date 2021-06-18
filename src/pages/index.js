@@ -23,7 +23,7 @@ const IndexPage = () => (
     <div className="content">
       <Banner></Banner>
       <About></About>
-      <Gallery></Gallery>
+      {/* <Gallery></Gallery> */}
       <Location></Location>
       <Picker></Picker>
       <Contact></Contact>
