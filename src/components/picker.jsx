@@ -4,6 +4,8 @@ import StepTwo from "@/components/step-2"
 import StepThree from "@/components/picker-step-3"
 import StepFour from "@/components/picker-step-4"
 import PickerBackButton from "@/components/picker-back-button"
+import LinkToTheTop from "@/components/home/link-to-the-top"
+import Logo from "@/components/logo"
 
 const Picker = () => {
   const [step, setStep] = useState(0)
@@ -14,6 +16,8 @@ const Picker = () => {
   const pages = [
     {
       header: "wybierz budynek",
+      desc:
+        "I pobierz kartę lokalu swojego nowego mieszkania. Porównaj metraż, rozkład pomieszczeń oraz specyfikację mieszkań. Wszystko do Twojej dyspozycji.",
       component: (
         <StepOne
           callback={(x, type) => {
@@ -54,22 +58,35 @@ const Picker = () => {
   ]
 
   return (
-    <section className={`picker step-${step}`} id="mieszkania">
-      {pages[step].header && (
-        <h1 className={`picker__header ${step >= 2 ? "text--dark-blue" : ""}`}>
-          {pages[step].header}
-        </h1>
-      )}
-      {pages[step].component}
-      {step > 0 && (
-        <PickerBackButton
-          color={step >= 2 ? "#060f2d" : "#fff"}
-          onClick={() => setStep(step - 1)}
-        >
-          {" "}
-        </PickerBackButton>
-      )}
-    </section>
+    <>
+      <section className={`picker step-${step}`} id="karty_lokali">
+        {pages[step].header && (
+          <div className="header">
+            <div className="gutters">
+              <h2 className="title">A teraz...</h2>
+              <h3>{pages[step].header}</h3>
+              {pages[step].desc && <p>{pages[step].desc}</p>}
+            </div>
+          </div>
+        )}
+        {pages[step].component}
+        {step > 0 ? (
+          <PickerBackButton
+            color={step >= 2 ? "#060f2d" : "#fff"}
+            onClick={() => setStep(step - 1)}
+          >
+            {" "}
+          </PickerBackButton>
+        ) : (
+          <div className="picker__button">
+            <Logo color="#fff"></Logo>
+          </div>
+        )}
+      </section>
+      <div className="gutters">
+        <LinkToTheTop></LinkToTheTop>
+      </div>
+    </>
   )
 }
 

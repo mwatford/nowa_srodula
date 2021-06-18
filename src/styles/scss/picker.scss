@@ -6,6 +6,37 @@
   align-items: center;
   flex-direction: column;
 
+  .logo {
+    display: none;
+    height: 40px;
+  }
+
+  .header {
+    background-color: #060f2dc6;
+    width: 100%;
+    padding-top: 35px;
+
+    .title,
+    h3,
+    p {
+      color: #fff;
+      max-width: 700px;
+    }
+
+    .title {
+      margin-bottom: 0;
+      line-height: 30px;
+      margin-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 25px;
+      line-height: 30px;
+      font-weight: 400;
+      margin-bottom: 13px;
+    }
+  }
+
   &__header {
     position: absolute;
     top: 25px;
@@ -16,13 +47,13 @@
   }
 
   &__image {
-    // position: absolute;
+    position: relative;
     width: 100%;
+    height: auto;
 
     img,
     svg {
       width: 100%;
-      // height: auto;
     }
   }
 
@@ -41,7 +72,6 @@
     border: none;
     background: none;
     text-transform: uppercase;
-    // z-index: 10;
     height: 50px;
     bottom: 0;
     left: 10px;
@@ -195,6 +225,25 @@
     a {
       font-size: 21px;
       height: 86px;
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .picker {
+    padding-top: 64px;
+    padding-left: var(--gutters);
+    padding-right: var(--gutters);
+
+    .header {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-top: 114px;
+      padding-left: 50px;
+      background: none;
+      width: 100%;
     }
   }
 }

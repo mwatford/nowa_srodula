@@ -1,13 +1,14 @@
 import * as React from "react"
-import Contact from "../components/contact"
+import Contact from "@/components/home/contact/contact"
 import "../styles/scss/main.scss"
 import NavigationMobile from "@/components/navigation-mobile"
 import Navigation from "@/components/navigation"
 import Banner from "@/components/banner"
 import Location from "@/components/location"
 import Gallery from "@/components/gallery"
-import Footer from "@/components/footer"
+import Footer from "@/components/home/footer/footer"
 import Picker from "@/components/picker"
+import About from "@/components/home/about"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -21,9 +22,10 @@ const IndexPage = () => (
     </div>
     <div className="content">
       <Banner></Banner>
+      <About></About>
+      <Gallery></Gallery>
       <Location></Location>
       <Picker></Picker>
-      <Gallery></Gallery>
       <Contact></Contact>
       <Footer></Footer>
     </div>

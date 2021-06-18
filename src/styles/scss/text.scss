@@ -1,0 +1,62 @@
+h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.title {
+  // font-size: 2rem;
+  color: $dark;
+  font-weight: 700;
+}
+
+.header {
+  .title {
+    margin-bottom: 0.75em;
+    line-height: 1.0625em;
+  }
+  sup {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 1em;
+    color: $header-p;
+    line-height: 1.5em;
+    letter-spacing: 0.16px;
+    margin-bottom: 1em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &--small {
+    .title {
+      font-size: 1.25em;
+      line-height: 1em;
+    }
+  }
+}
+
+.topLink {
+  display: flex;
+  color: #c1c1c1;
+  font-size: 0.75rem;
+  margin: 1.75rem 0;
+  font-weight: 700;
+
+  &:hover {
+    color: $dark;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .topLink {
+    font-size: 16px;
+  }
+}

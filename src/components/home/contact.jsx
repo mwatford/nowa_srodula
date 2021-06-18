@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ContactForm from "@/components/contact-form"
+import ContactForm from "./contact-form"
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState({
@@ -11,13 +11,15 @@ const Contact = () => {
   return (
     <section className="col contact" id="kontakt">
       <div className="gutters col">
-        <h1>jesteśmy w kontakcie?</h1>
-        <p>
-          Chciałbyś dowiedzieć się więcej? Masz dodatkowe pytania? Może chcesz
-          umówić krótką, <span className="text--pink">niezobowiązującą </span>
-          rozmowę z naszym konsultantem? Wypełnij poniższy formularz, a
-          skontaktujemy się z Tobą jak najszybciej!
-        </p>
+        <div className="header">
+          <h2 className="title">Potrzebujesz konsultacji?</h2>
+          <p>
+            Śmiało, chętnie odpowiemy na wszystkie Twoje pytania! Wypełnij
+            formularz jeśli potrzebujesz porady lub chcesz dowiedzieć się
+            więcej, a nasz konsultant odezwie się do Ciebie tak szybko, jak to
+            tylko możliwe.
+          </p>
+        </div>
         {!submitted.state ? (
           <ContactForm
             callback={(state, message, error) =>
@@ -25,7 +27,6 @@ const Contact = () => {
             }
           ></ContactForm>
         ) : (
-          // refactor to load gtag
           <div>
             <p className={submitted.error ? "text--pink" : "text--green"}>
               {submitted.message}

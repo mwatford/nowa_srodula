@@ -1,0 +1,14 @@
+:root {
+  --gutters: 2rem;
+}
+
+.gutters {
+  margin-left: var(--gutters);
+  margin-right: var(--gutters);
+}
+
+@media screen and (min-width: $lg) {
+  :root {
+    --gutters: 140px;
+  }
+}

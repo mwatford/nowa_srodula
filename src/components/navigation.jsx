@@ -1,14 +1,16 @@
 import React from "react"
 import Links from "@/components/links"
 import Socials from "@/components/socials"
+import Logo from "@/components/logo"
 
 const Navigation = () => {
   return (
     <nav className="navigation navigation--desktop">
-      <div className="navigation__content">
-        <img src="../../logo.svg" className="logo" alt="logo" />
-        <Links></Links>
-        <Socials></Socials>
+      <div className="gutters">
+        <div className="navigation__content">
+          <Logo color="#ffffff"></Logo>
+          <Links></Links>
+        </div>
       </div>
     </nav>
   )

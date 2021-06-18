@@ -1,19 +1,23 @@
-$dark-background: #060f2d;
+$dark: #060f2d;
+$blue: #122172cb;
 $green: #16f47f;
 $pink: #ff1d8e;
-$gray: #e4e4e4;
+$gray: #efefef;
+$background: #f7f7f7;
+$header-p: #333333;
+$square-bgc: #1237b21c;
 
 :root {
-  --dark-background: $dark-background;
+  --dark: $dark;
   --green: $green;
 }
 
 $xs: 576px;
 $sm: 768px;
-$md: 992px;
-$lg: 1200px;
+$md: 1120px;
+$lg: 1366px;
 $xl: 1440px;
-$xxl: 1900px;
+$xxl: 1800px;
 
 $gutters: 36px;
 $gutters-lg: 120px;
