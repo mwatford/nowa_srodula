@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react"
-import { asd } from "@/utility/picker"
+import { asd, x } from "@/utility/picker"
 
 const points = {
   E: [
@@ -67,32 +67,52 @@ const points = {
   ],
 }
 
-// const overlay = asd(
-//   { width: 100 / 1366, height: 100 / 768 },
-//   "0 0, 0 100, 2 100, 2 17, 98 17, 98 80, 2 80, 2 101, 100 101, 100 0"
-// )
-// const overlay =
-//   "0 0, 0 100, 2 100, 2 17, 98 17, 98 80, 2 80, 2 101, 100 101, 100 0"
+const defaultOverlay = asd(
+  { width: 100 / 1366, height: 100 / 768 },
+  "0 0, 0 100, 2 100, 17, 98 17, 98 80, 2 80, 2 100, 100 100, 100 0"
+)
+
+const overlay =
+  "0 0, 0 100, 8 100, 8 24, 95 24, 95 81, 2 81, 2 101, 100 101, 100 0"
 
 const Stage = ({ type, floor, callback }) => {
   const url = `../../pietra/${type}_${floor}.svg`
 
   const imgEl = useRef(null)
+  const [overlayPoints, setOverlay] = useState(overlay)
+
+  useEffect(() => {
+    const onResize = () => setOverlay(x(imgEl.current, overlay))
+
+    onResize()
+
+    window.addEventListener("resize", onResize)
+
+    return () => {
+      window.removeEventListener("resize", onResize)
+    }
+  }, [])
 
   return (
     <div className="picker__image" ref={imgEl}>
-      {/* <svg height="100%" width="100%" className="outer">
+      <svg height="100%" width="100%" className="overlay">
         <g>
-          <polygon fill="#060F2DE6" points={overlay}></polygon>
+          <polygon fill="#060F2DE6" points={overlayPoints}></polygon>
         </g>
-      </svg> */}
-      <img src={url} alt="x" />
-      <svg width="100%" height="100%" viewBox="0 0 1366 768" className="outer">
+      </svg>
+      <img src={url} alt="x" style={{ paddingTop: 80 }} />
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 1366 768"
+        className="overlay"
+        style={{ paddingTop: 80 }}
+      >
         <g>
           {type === "E"
             ? points["E"][floor > 2 ? 2 : floor].map((el, index) => (
                 <polygon
-                  className="overlay"
+                  className="overlay__button"
                   points={el}
                   key={el}
                   title={index + 1}

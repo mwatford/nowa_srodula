@@ -46,7 +46,11 @@ const Step = ({ type, floor, flat }) => {
           </div>
         </Button>
       </a>
-      <img src={imgURL} alt="karta lokalu" />
+      <img
+        src={imgURL}
+        alt="karta lokalu"
+        style={{ width: "100%", padding: "var(--gutters)" }}
+      />
     </div>
   )
 }

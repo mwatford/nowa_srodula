@@ -62,37 +62,37 @@ const Picker = () => {
 
   return (
     <>
-      <section className={`picker step-${step}`} id="karty_lokali">
-        {pages[step].headline && (
-          <div className="header">
-            <div className="gutters">
+      <section className={`picker`} id="karty_lokali">
+        <div className="picker__step">
+          {pages[step].headline && (
+            <div className="header">
               <h2 className="title">{pages[step].headline}</h2>
               <h3>{pages[step].header}</h3>
               {pages[step].desc && <p>{pages[step].desc}</p>}
             </div>
-          </div>
-        )}
-        <div id="portal"></div>
-        {pages[step].component}
+          )}
+          {pages[step].component}
+        </div>
         {/* {step > 0 ? (
           <PickerBackButton
-            color={step >= 2 ? "#060f2d" : "#fff"}
-            onClick={() => setStep(step - 1)}
+          color={step >= 2 ? "#060f2d" : "#fff"}
+          onClick={() => setStep(step - 1)}
           >
-            {" "}
+          {" "}
           </PickerBackButton>
-        ) : (
+          ) : (
           <div className="picker__button">
-            <Logo color="#fff"></Logo>
+          <Logo color="#fff"></Logo>
           </div>
         )} */}
-        {step != 0 ? (
+        {/* {step != 0 ? (
           <PickerBackButton
             onClick={() => setStep(step - 1)}
           ></PickerBackButton>
         ) : (
           <Logo></Logo>
-        )}
+        )} */}
+        <div id="portal"></div>
       </section>
       <div className="gutters">
         <LinkToTheTop></LinkToTheTop>

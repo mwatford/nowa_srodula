@@ -79,13 +79,13 @@ const Step = ({ callback }) => {
   return (
     <div className="picker__image" ref={imgEl}>
       <Img fluid={image} />
-      <svg width="100%" height="100%" className="outer">
+      <svg width="100%" height="100%" className="overlay">
         <g>
           <polygon fill="#060F2DB7" points={points}></polygon>
           {floors.map(el => (
             <polygon
               key={el.points}
-              className="overlay"
+              className="overlay__button"
               points={el.points}
               onClick={() => callback(1, el.floor)}
             ></polygon>
