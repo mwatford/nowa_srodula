@@ -15,7 +15,7 @@ const Contact = () => {
       <Team></Team>
       <section className="col contact" id="kontakt">
         <div className="gutters col">
-          <div className="header">
+          <div className="header" data-aos="fade-up">
             <h2 className="title">Potrzebujesz konsultacji?</h2>
             <p>
               Śmiało, chętnie odpowiemy na wszystkie Twoje pytania! Wypełnij

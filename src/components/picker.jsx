@@ -15,6 +15,7 @@ const Picker = () => {
 
   const pages = [
     {
+      headline: "A teraz...",
       header: "wybierz budynek",
       desc:
         "I pobierz kartę lokalu swojego nowego mieszkania. Porównaj metraż, rozkład pomieszczeń oraz specyfikację mieszkań. Wszystko do Twojej dyspozycji.",
@@ -28,6 +29,7 @@ const Picker = () => {
       ),
     },
     {
+      headline: "A teraz...",
       header: "wybierz piętro",
       component: (
         <StepTwo
@@ -39,7 +41,8 @@ const Picker = () => {
       ),
     },
     {
-      header: "wybierz mieszkanie",
+      headline: "Jeszcze tylko mieszkanie",
+      header: "i Twoja karta lokalu będzie gotowa do pobrania",
       component: (
         <StepThree
           type={type}
@@ -52,7 +55,7 @@ const Picker = () => {
       ),
     },
     {
-      header: "",
+      headline: "Pobierz kartę lokalu",
       component: <StepFour type={type} floor={floor} flat={flat}></StepFour>,
     },
   ]
@@ -60,17 +63,18 @@ const Picker = () => {
   return (
     <>
       <section className={`picker step-${step}`} id="karty_lokali">
-        {pages[step].header && (
+        {pages[step].headline && (
           <div className="header">
             <div className="gutters">
-              <h2 className="title">A teraz...</h2>
+              <h2 className="title">{pages[step].headline}</h2>
               <h3>{pages[step].header}</h3>
               {pages[step].desc && <p>{pages[step].desc}</p>}
             </div>
           </div>
         )}
+        <div id="portal"></div>
         {pages[step].component}
-        {step > 0 ? (
+        {/* {step > 0 ? (
           <PickerBackButton
             color={step >= 2 ? "#060f2d" : "#fff"}
             onClick={() => setStep(step - 1)}
@@ -81,6 +85,13 @@ const Picker = () => {
           <div className="picker__button">
             <Logo color="#fff"></Logo>
           </div>
+        )} */}
+        {step != 0 ? (
+          <PickerBackButton
+            onClick={() => setStep(step - 1)}
+          ></PickerBackButton>
+        ) : (
+          <Logo></Logo>
         )}
       </section>
       <div className="gutters">

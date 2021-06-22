@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
+import { asd } from "@/utility/picker"
 
 const points = {
   E: [
@@ -66,13 +67,27 @@ const points = {
   ],
 }
 
+// const overlay = asd(
+//   { width: 100 / 1366, height: 100 / 768 },
+//   "0 0, 0 100, 2 100, 2 17, 98 17, 98 80, 2 80, 2 101, 100 101, 100 0"
+// )
+// const overlay =
+//   "0 0, 0 100, 2 100, 2 17, 98 17, 98 80, 2 80, 2 101, 100 101, 100 0"
+
 const Stage = ({ type, floor, callback }) => {
   const url = `../../pietra/${type}_${floor}.svg`
 
+  const imgEl = useRef(null)
+
   return (
-    <div className="picker__image">
+    <div className="picker__image" ref={imgEl}>
+      {/* <svg height="100%" width="100%" className="outer">
+        <g>
+          <polygon fill="#060F2DE6" points={overlay}></polygon>
+        </g>
+      </svg> */}
       <img src={url} alt="x" />
-      <svg width="100%" height="100%" viewBox="0 0 1366 768">
+      <svg width="100%" height="100%" viewBox="0 0 1366 768" className="outer">
         <g>
           {type === "E"
             ? points["E"][floor > 2 ? 2 : floor].map((el, index) => (

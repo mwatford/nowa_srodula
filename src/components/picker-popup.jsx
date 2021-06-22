@@ -1,32 +1,53 @@
 import React, { useRef } from "react"
+import ReactDOM from 'react-dom'
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import Button from "@/components/button"
+import Confetti from "@/components/confetti"
+import Envelope from "@/components/envelope"
+import BackButton from "@/components/back"
 
 const Popup = ({ callback }) => {
   const popupEl = useRef(null)
 
-  const onPopupClick = e => {
-    if (e.target === popupEl.current) callback()
-  }
+  // const onPopupClick = e => {
+  //   if (e.target === popupEl.current) callback()
+  // }
 
-  return (
-    <div className="popup" onClick={e => onPopupClick(e)} ref={popupEl}>
+  return ReactDOM.createPortal(
+    <div className="popup">
       <div className="popup__content">
-        <h1 className="text--pink">UDAŁO SIĘ!</h1>
-        <h1 className="text--dark-blue">POBRANO KARTĘ LOKALU.</h1>
-        <p className="text--dark-blue">
-          Jeżeli masz dodatkowe pytania skontaktuj się z działem
-          <br />
-          sprzedaży pod numerem 795 755 924 lub
-        </p>
-        <AnchorLink
-          className="button button--filled"
-          to="/#kontakt"
-          onAnchorLinkClick={callback}
-        >
-          wypełnij formularz
-        </AnchorLink>
+        <div className="header">
+          <div className="row">
+            <h2 className="title">Sukces!</h2>
+            <Confetti></Confetti>
+          </div>
+          <h3 className="subheader">
+            Udało Ci się pobrać kartę Twojego nowego mieszkania.
+          </h3>
+          <p className="text--dark-blue">
+            Jeżeli chciałbyś dowiedzieć się więcej wypełnij formularz
+            kontaktowy, zadzwoń lub odwiedź nas w biurze sprzedaży.
+          </p>
+        </div>
+        <div className="row jc-sb wrap">
+          <AnchorLink to="/#kontakt" onAnchorLinkClick={callback}>
+            <Button color="light" onClick={() => {}}>
+              <span>Wypełnij formularz</span>
+              <div className="icon">
+                <Envelope></Envelope>
+              </div>
+            </Button>
+          </AnchorLink>
+          <Button color="empty" onClick={() => callback()}>
+            Powrót
+            <div className="icon">
+              <BackButton></BackButton>
+            </div>
+          </Button>
+        </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("portal")
   )
 }
 

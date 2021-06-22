@@ -4,8 +4,8 @@ const MenuIcon = ({ close }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width="14"
+      height="14"
       viewBox="0 0 30 30"
       className="menu-button"
     >

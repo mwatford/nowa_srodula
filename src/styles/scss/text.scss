@@ -48,8 +48,17 @@ h2 {
   font-size: 0.75rem;
   margin: 1.75rem 0;
   font-weight: 700;
+  align-items: center;
+  fill: #c1c1c1;
+
+  svg {
+    transform: rotate(90deg);
+    height: 16px;
+    margin-right: 5px;
+  }
 
   &:hover {
+    fill: $dark;
     color: $dark;
     text-decoration: underline;
   }

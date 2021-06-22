@@ -4,7 +4,7 @@ import LinkToTheTop from "./link-to-the-top"
 const About = () => {
   return (
     <div className="gutters about" id="o_inwestycji">
-      <div className="col about__text">
+      <div className="col about__text" data-aos="fade-left">
         {/* header 1 */}
         <div className="header">
           <h2 className="title">Proces sprzedaży trwa.</h2>
@@ -30,7 +30,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="square">
+      <div className="square" data-aos="fade-left" data-aos-delay="200">
         <h3>Zalety inwestycji:</h3>
         <ul>
           <li>Osiedle zamknięte,</li>

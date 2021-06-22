@@ -50,6 +50,8 @@ ul {
   button {
     border: none;
     background: transparent;
+    display: flex;
+    align-items: center;
   }
 
   &__background {
@@ -126,14 +128,15 @@ ul {
 }
 
 .icon {
-  fill: $green;
+  fill: #fff;
+  stroke-width: 2;
 
   &:focus {
     outline: none;
   }
 
   &--close {
-    fill: $pink;
+    fill: $dark;
   }
 }
 

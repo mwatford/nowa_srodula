@@ -4,6 +4,7 @@ import anime from "animejs"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Button from "@/components/button"
+import NextIcon from "@/components/next"
 
 const animation = () => {
   anime({
@@ -16,7 +17,7 @@ const animation = () => {
 }
 
 const Banner = () => {
-  const images = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       banner: file(relativePath: { eq: "banner.webp" }) {
         childImageSharp {
@@ -25,10 +26,36 @@ const Banner = () => {
           }
         }
       }
+      md: file(relativePath: { eq: "banner-md.webp" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      mobile: file(relativePath: { eq: "banner-mobile-2.webp" }) {
+        childImageSharp {
+          fluid(maxWidth: 400, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
-  const img = images.banner.childImageSharp.fluid
+  let sources = [
+    data.mobile.childImageSharp.fluid,
+    {
+      ...data.banner.childImageSharp.fluid,
+      media: `(min-width: 1024px)`,
+    },
+    {
+      ...data.md.childImageSharp.fluid,
+      media: `(min-width: 500px)`,
+    },
+  ]
+
+  // sources = data.banner.childImageSharp.fluid
 
   useEffect(() => {
     animation()
@@ -37,9 +64,9 @@ const Banner = () => {
   return (
     <section className="banner col">
       <div className="banner__image">
-        <Img fluid={img} className="banner__image--desktop" />
+        <Img fluid={sources} className="banner__image--desktop" />
       </div>
-      <div className="header">
+      <div className="header" data-aos="fade-left">
         <h1>Osiedle Nowa Środula.</h1>
         <h2 className="title">
           Twoje miejsce <br />w Sosnowcu.

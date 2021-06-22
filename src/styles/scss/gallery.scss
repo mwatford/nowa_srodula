@@ -1,94 +1,133 @@
-@import "~react-image-gallery/styles/scss/image-gallery.scss";
+// @import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
-.fullscreen.image-gallery-content .image-gallery-slide .image-gallery-image {
-  height: 100vh !important;
-  max-height: none;
-}
-.image-gallery-content .image-gallery-slide .image-gallery-image {
-  @media (max-width: $md) {
-    height: 61vw;
-  }
-  height: auto;
+// .fullscreen.image-gallery-content .image-gallery-slide .image-gallery-image {
+//   height: 100vh !important;
+//   max-height: none;
+// }
+// .image-gallery-content .image-gallery-slide .image-gallery-image {
+//   @media (max-width: $md) {
+//     height: 61vw;
+//   }
+//   height: auto;
+//   width: 30%;
+//   object-fit: cover;
+//   object-position: 50% 70%;
+// }
+
+// .image-gallery-slides {
+//   overflow: visible;
+// }
+
+// .image-gallery-left-nav,
+// .image-gallery-right-nav,
+// .image-gallery-play-button,
+// .image-gallery-fullscreen-button {
+//   &:hover {
+//     color: $green;
+//   }
+// }
+// .gallery-wrapper {
+//   width: 50%;
+// }
+
+// #galeria {
+//   z-index: 0;
+//   position: relative;
+
+//   h2 {
+//     font-size: 23px;
+//     font-weight: 700;
+//     position: absolute;
+//     bottom: 100px;
+//     margin-bottom: 15px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     z-index: 1;
+//     color: $green;
+//     text-transform: uppercase;
+//     font-weight: 500;
+//     line-height: 23px;
+//     letter-spacing: 4.7px;
+//   }
+// }
+
+// .image-gallery-custom-left-nav,
+// .image-gallery-custom-right-nav {
+//   cursor: pointer;
+//   position: absolute;
+//   color: $green;
+//   bottom: 100px;
+//   z-index: 1;
+//   background: transparent;
+//   border: none;
+
+//   img {
+//     width: 55px;
+//   }
+// }
+
+// .image-gallery-custom-left-nav {
+//   left: 90px;
+// }
+
+// .image-gallery-custom-right-nav {
+//   right: 90px;
+// }
+
+// @media screen and (max-width: $sm) {
+//   #galeria {
+//     h2 {
+//       bottom: 10px;
+//       margin: 0;
+//     }
+//   }
+//   .image-gallery-custom-left-nav {
+//     bottom: 10px;
+//     left: 10px;
+//     height: 20px;
+
+//     img {
+//       width: 20px;
+//     }
+//   }
+
+//   .image-gallery-custom-right-nav {
+//     bottom: 10px;
+//     right: 10px;
+
+//     img {
+//       width: 20px;
+//     }
+//   }
+// }
+
+.gallery {
   width: 100%;
-  object-fit: cover;
-  object-position: 50% 70%;
-}
-.image-gallery-left-nav,
-.image-gallery-right-nav,
-.image-gallery-play-button,
-.image-gallery-fullscreen-button {
-  &:hover {
-    color: $green;
+  overflow: hidden;
+
+  &__image {
+    max-width: 3900px;
   }
 }
 
-#galeria {
-  z-index: 0;
-  position: relative;
-
-  h2 {
-    font-size: 23px;
-    font-weight: 700;
-    position: absolute;
-    bottom: 100px;
-    margin-bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    color: $green;
-    text-transform: uppercase;
-    font-weight: 500;
-    line-height: 23px;
-    letter-spacing: 4.7px;
-  }
-}
-
-.image-gallery-custom-left-nav,
-.image-gallery-custom-right-nav {
+.slick-slide {
+  // transform: scale(0.65) translateX(0);
+  transition: all 0.3s ease;
   cursor: pointer;
-  position: absolute;
-  color: $green;
-  bottom: 100px;
-  z-index: 1;
-  background: transparent;
-  border: none;
-
-  img {
-    width: 55px;
-  }
 }
 
-.image-gallery-custom-left-nav {
-  left: 90px;
+.slick-current {
+  transform: scale(1);
+  transition: all 0.3s ease;
 }
 
-.image-gallery-custom-right-nav {
-  right: 90px;
-}
-
-@media screen and (max-width: $sm) {
-  #galeria {
-    h2 {
-      bottom: 10px;
-      margin: 0;
-    }
+@media screen and (min-width: 1024px) {
+  .slick-slide {
+    transform: scale(0.65) translateX(0);
   }
-  .image-gallery-custom-left-nav {
-    bottom: 10px;
-    left: 10px;
-    height: 20px;
-
-    img {
-      width: 20px;
-    }
-  }
-
-  .image-gallery-custom-right-nav {
-    bottom: 10px;
-    right: 10px;
-
-    img {
-      width: 20px;
-    }
+  .slick-current {
+    transform: scale(1);
   }
 }

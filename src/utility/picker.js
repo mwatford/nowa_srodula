@@ -14,3 +14,10 @@ export const kek = (points, width, height) =>
 
 export const x = ({ clientWidth, clientHeight }, points) =>
   kek(points, clientWidth, clientHeight)
+
+export const asd = ({ width, height }, points) =>
+  points
+    .split(",")
+    .map(tup => tup.trim().split(" "))
+    .map(([x, y]) => [x / width, y / height].join(" "))
+    .join(",")

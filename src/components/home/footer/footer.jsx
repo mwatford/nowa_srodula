@@ -6,7 +6,7 @@ import SubscribeForm from "./subscribe-form"
 const Footer = () => {
   return (
     <footer className="footer" id="footer">
-      <div className="gutters">
+      <div className="gutters" data-aos="fade-up">
         <SubscribeForm></SubscribeForm>
         <div className="header">
           <h2 className="title title--small">SKONTAKTUJ SIĘ Z NAMI</h2>

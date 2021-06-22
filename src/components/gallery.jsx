@@ -1,5 +1,6 @@
 import React from "react"
 import ImageGallery from "react-image-gallery"
+import X from "@/components/home/gallery-2"
 import { graphql, useStaticQuery } from "gatsby"
 
 const Gallery = () => {
@@ -43,22 +44,25 @@ const Gallery = () => {
     )
   }
 
+  const images = data.allImageSharp.nodes.map(img => img.fluid.srcWebp)
+
   return (
-    <section id="galeria">
-      <ImageGallery
-        items={data.allImageSharp.nodes.map(img => ({
-          original: img.fluid.srcWebp,
-        }))}
-        showThumbnails={false}
-        showIndex={true}
-        autoPlay={true}
-        showPlayButton={false}
-        showFullscreenButton={false}
-        lazyLoad={true}
-        renderLeftNav={renderLeftNav}
-        renderRightNav={renderRightNav}
-        originalAlt="wizualizacja"
-      ></ImageGallery>
+    <section id="galeria" className="gallery" data-aos="fade-up">
+      {/* <ImageGallery
+          items={data.allImageSharp.nodes.map(img => ({
+            original: img.fluid.srcWebp,
+          }))}
+          showThumbnails={false}
+          showIndex={true}
+          autoPlay={false}
+          showPlayButton={false}
+          showFullscreenButton={false}
+          lazyLoad={true}
+          renderLeftNav={renderLeftNav}
+          renderRightNav={renderRightNav}
+          originalAlt="wizualizacja"
+        ></ImageGallery> */}
+      <X images={images}></X>
     </section>
   )
 }

@@ -10,26 +10,38 @@ import Footer from "@/components/home/footer/footer"
 import Picker from "@/components/picker"
 import About from "@/components/home/about"
 import SEO from "../components/seo"
+// import AOS from "aos"
+// import { useEffect } from "react"
+// import "aos/dist/aos.css"
 
-const IndexPage = () => (
-  <main>
-    <SEO title="Mieszkania w Sosnowcu" />
-    <div className="mobile-nav-wrapper">
-      <NavigationMobile></NavigationMobile>
-    </div>
-    <div className="desktop-nav-wrapper">
-      <Navigation></Navigation>
-    </div>
-    <div className="content">
-      <Banner></Banner>
-      <About></About>
-      {/* <Gallery></Gallery> */}
-      <Location></Location>
-      <Picker></Picker>
-      <Contact></Contact>
-      <Footer></Footer>
-    </div>
-  </main>
-)
+
+const IndexPage = () => {
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 400,
+  //   })
+  // }, [])
+
+  return (
+    <main>
+      <SEO title="Mieszkania w Sosnowcu" />
+      <div className="mobile-nav-wrapper">
+        <NavigationMobile></NavigationMobile>
+      </div>
+      <div className="desktop-nav-wrapper">
+        <Navigation></Navigation>
+      </div>
+      <div className="content relative">
+        <Banner></Banner>
+        <About></About>
+        <Gallery></Gallery>
+        <Location></Location>
+        <Picker></Picker>
+        <Contact></Contact>
+        <Footer></Footer>
+      </div>
+    </main>
+  )
+}
 
 export default IndexPage

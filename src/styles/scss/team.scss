@@ -32,14 +32,15 @@
     margin-bottom: 0;
   }
 
-  picture {
+  &__image {
+    margin-right: 2rem;
     width: 115px;
     height: 115px;
-    background-color: #fac;
-    margin-right: 2rem;
-    border-radius: 50%;
 
     img {
+      object-position: 0;
+      border-radius: 50%;
+      object-fit: cover;
       width: 100%;
       height: 100%;
     }
@@ -69,12 +70,13 @@
   }
 }
 
-@media screen and (min-width: $md) {
+@media screen and (min-width: $sm) {
   .team {
     display: grid;
     row-gap: 38px;
     grid-template-columns: 1fr 1fr;
   }
+
   .teamMember {
     place-self: start start;
     margin: 0;
@@ -91,13 +93,12 @@
   }
 
   .teamMember {
-    picture {
+    &__image {
       width: 168px;
       height: 168px;
 
       img {
         object-fit: cover;
-        object-position: center;
       }
     }
 

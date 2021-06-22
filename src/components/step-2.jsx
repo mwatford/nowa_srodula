@@ -79,7 +79,7 @@ const Step = ({ callback }) => {
   return (
     <div className="picker__image" ref={imgEl}>
       <Img fluid={image} />
-      <svg width="100%" height="100%">
+      <svg width="100%" height="100%" className="outer">
         <g>
           <polygon fill="#060F2DB7" points={points}></polygon>
           {floors.map(el => (
