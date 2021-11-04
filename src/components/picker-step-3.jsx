@@ -1,5 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from 'react';
-import { applyPointsOnImage } from '@/utility/picker';
+import React, { useRef } from 'react';
 
 const E_sold = [
     1,
@@ -212,27 +211,10 @@ const points = {
     },
 };
 
-const overlay =
-    '0 0, 0 100, 8 100, 8 24, 95 24, 95 81, 2 81, 2 101, 100 101, 100 0';
-
 const Stage = ({ type, floor, callback }) => {
     const url = `../../pietra/${type}_${floor}c.svg`;
 
     const imgEl = useRef(null);
-    const [overlayPoints, setOverlay] = useState(overlay);
-
-    useLayoutEffect(() => {
-        const onResize = () =>
-            setOverlay(applyPointsOnImage(imgEl.current, overlay));
-
-        onResize();
-
-        window.addEventListener('resize', onResize);
-
-        return () => {
-            window.removeEventListener('resize', onResize);
-        };
-    }, []);
 
     return (
         <div className="picker__image step-3" ref={imgEl}>
