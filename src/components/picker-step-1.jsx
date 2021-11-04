@@ -220,7 +220,7 @@ const calcBuildings = (buildings, imgEl) => {
     ];
 };
 
-const StepOne = ({ callback }) => {
+const Step = ({ callback }) => {
     const data = useStaticQuery(graphql`
         query {
             img: file(relativePath: { eq: "picker-1.webp" }) {
@@ -298,4 +298,4 @@ const StepOne = ({ callback }) => {
     );
 };
 
-export default StepOne;
+export default Step;

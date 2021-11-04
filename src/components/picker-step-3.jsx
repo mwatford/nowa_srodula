@@ -211,7 +211,7 @@ const points = {
     },
 };
 
-const Stage = ({ type, floor, callback }) => {
+const Step = ({ type, floor, callback }) => {
     const url = `../../pietra/${type}_${floor}c.svg`;
 
     const imgEl = useRef(null);
@@ -267,4 +267,4 @@ const Stage = ({ type, floor, callback }) => {
     );
 };
 
-export default Stage;
+export default Step;
