@@ -1,0 +1,20 @@
+<img src="[F_1] (imported)" width="1366" height="768" border="0" usemap="#map" />
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:mw -->
+<area shape="poly" coords="835,155,1015,155,1015,335,895,335,895,325,835,325"  nohref="nohref" />
+<area shape="poly" coords="1015,155,1280,155,1280,355,1090,355,1065,335,1015,335"  nohref="nohref" />
+<area shape="poly" coords="1280,360,1090,360,1070,380,1015,380,1015,565,1280,565"  nohref="nohref" />
+<area shape="poly" coords="1015,565,835,565,835,380,1015,380"  nohref="nohref" />
+<area shape="poly" coords="835,565,835,380,685,380,685,565"  nohref="nohref" />
+<area shape="poly" coords="685,565,535,565,535,380,685,380"  nohref="nohref" />
+<area shape="poly" coords="535,565,535,380,310,380,310,565"  nohref="nohref" />
+<area shape="poly" coords="310,565,85,565,85,360,215,360,215,380,310,380"  nohref="nohref" />
+<area shape="poly" coords="85,360,215,360,215,340,260,340,260,325,310,325,310,155,85,155"  nohref="nohref" />
+<area shape="poly" coords="310,155,535,155,535,340,310,340"  nohref="nohref" />
+<area shape="poly" coords="535,155,535,320,600,320,600,335,685,335,685,155"  nohref="nohref" />
+</map>
