@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import StepOne from "@/components/step-1"
-import StepTwo from "@/components/step-2"
+import StepOne from "@/components/picker-step-1"
+import StepTwo from "@/components/picker-step-2"
 import StepThree from "@/components/picker-step-3"
 import StepFour from "@/components/picker-step-4"
 import PickerBackButton from "@/components/picker-back-button"
@@ -62,16 +62,24 @@ const Picker = () => {
 
   return (
     <>
-      <section className={`picker`} id="karty_lokali">
+      <section className="picker" id="karty_lokali">
         <div className="picker__step">
           {pages[step].headline && (
             <div className="header">
               <h2 className="title">{pages[step].headline}</h2>
-              <h3>{pages[step].header}</h3>
+              <h3 className="subheader">{pages[step].header}</h3>
               {pages[step].desc && <p>{pages[step].desc}</p>}
             </div>
           )}
           {pages[step].component}
+          {step != 0 ? (
+            <PickerBackButton
+              onClick={() => setStep(step - 1)}
+            ></PickerBackButton>
+          ) : (
+            <Logo></Logo>
+          )}
+          <div id="portal"></div>
         </div>
         {/* {step > 0 ? (
           <PickerBackButton
@@ -85,18 +93,8 @@ const Picker = () => {
           <Logo color="#fff"></Logo>
           </div>
         )} */}
-        {/* {step != 0 ? (
-          <PickerBackButton
-            onClick={() => setStep(step - 1)}
-          ></PickerBackButton>
-        ) : (
-          <Logo></Logo>
-        )} */}
-        <div id="portal"></div>
-      </section>
-      <div className="gutters">
         <LinkToTheTop></LinkToTheTop>
-      </div>
+      </section>
     </>
   )
 }

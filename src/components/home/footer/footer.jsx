@@ -1,13 +1,39 @@
-import React from "react"
+import React, { useState } from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Links from "@/components/links"
 import SubscribeForm from "./subscribe-form"
 
 const Footer = () => {
+  const [submitted, setSubmitted] = useState({
+    state: false,
+    error: false,
+    message: "",
+  })
+
   return (
     <footer className="footer" id="footer">
-      <div className="gutters" data-aos="fade-up">
-        <SubscribeForm></SubscribeForm>
+      <div className="gutters" data-aos="fade-left">
+        {!submitted.state ? (
+          <SubscribeForm
+            callback={(state, message, error) =>
+              setSubmitted({ state, message, error })
+            }
+          ></SubscribeForm>
+        ) : submitted.error ? (
+          <div className="subscribe__response col">
+            <p className="text--pink">Wystąpił błąd!</p>
+            <button
+              className="subscribe__button"
+              onClick={() => setSubmitted(false, "", false)}
+            >
+              Spróbuj ponownie
+            </button>
+          </div>
+        ) : (
+          <div className="subscribe__response">
+            <p className="text--green">Dziękujemy za subskrypcję!</p>
+          </div>
+        )}
         <div className="header">
           <h2 className="title title--small">SKONTAKTUJ SIĘ Z NAMI</h2>
           <address>

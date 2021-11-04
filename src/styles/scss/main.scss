@@ -50,12 +50,12 @@ body {
 }
 
 #portal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  z-index: 3;
+  position: relative;
 }
-
 
 @import "gutters.scss";
 @import "navigation.scss";
@@ -75,4 +75,17 @@ body {
   body {
     background-color: #fff;
   }
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #fff;
+}
+
+a {
+  display: flex;
+  width: fit-content;
 }

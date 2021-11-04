@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const Location = () => {
   const images = useStaticQuery(graphql`
     query {
-      prace: file(relativePath: { eq: "prace.webp" }) {
+      prace: file(relativePath: { eq: "budowa.webp" }) {
         childImageSharp {
           fluid(maxWidth: 1366) {
             ...GatsbyImageSharpFluid

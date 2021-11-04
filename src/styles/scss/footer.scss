@@ -69,6 +69,15 @@
   grid-template-columns: 1fr 1fr;
   margin-bottom: 42px;
 
+  &__response {
+    order: 4;
+    margin-bottom: 42px;
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
   input {
     width: 100%;
     border: 1px solid #16f47f;
@@ -89,6 +98,7 @@
   }
 
   &__button {
+    cursor: pointer;
     grid-column: 1 / span 2;
     width: 120px;
     height: 40px;
@@ -100,6 +110,12 @@
     border: none;
     border-radius: 4px;
     background-color: #4f4f4f;
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

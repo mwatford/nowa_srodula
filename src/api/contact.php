@@ -6,20 +6,19 @@
     'MIME-Version' => '1.0'
 );
 
+  $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
   $name = $_POST['name'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];
   $surname = $_POST['surname'];
   $message = $_POST['message'];
   $accept = $_POST['accept'];
-  $discount = $_POST['discount'] === "true" ? "Tak" : "Nie";
 
   $content = "
   Imię: $name
   Nazwisko: $surname
   E-mail: $email
   Telefon: $phone
-  Rabat: $discount
   Wiadomość: $message
   ";
 

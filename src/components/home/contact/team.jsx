@@ -5,10 +5,10 @@ import { graphql, useStaticQuery } from "gatsby"
 
 let teamMembers = [
   {
-    name: "Monika",
-    phone: "+48 695 902 902",
-    email: "monika@segments.pl",
-    image: "../../team-member-1.webp",
+    name: "Joanna",
+    phone: "+48 795 755 924",
+    email: "joanna@segments.pl",
+    image: "../../team-member-3.webp",
   },
   {
     name: "Barbara",
@@ -17,10 +17,10 @@ let teamMembers = [
     image: "../../team-member-2.webp",
   },
   {
-    name: "Joanna",
-    phone: "+48 795 755 924",
-    email: "joanna@segments.pl",
-    image: "../../team-member-3.webp",
+    name: "Monika",
+    phone: "+48 695 902 902",
+    email: "monika@segments.pl",
+    image: "../../team-member-1.webp",
   },
 ]
 

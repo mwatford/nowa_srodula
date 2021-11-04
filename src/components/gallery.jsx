@@ -1,7 +1,7 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import ImageGallery from "react-image-gallery"
 import X from "@/components/home/gallery-2"
-import { graphql, useStaticQuery } from "gatsby"
 
 const Gallery = () => {
   const data = useStaticQuery(graphql`

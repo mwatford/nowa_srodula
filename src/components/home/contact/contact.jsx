@@ -31,7 +31,7 @@ const Contact = () => {
               }
             ></ContactForm>
           ) : (
-            <div>
+            <div className="form__response">
               <p className={submitted.error ? "text--pink" : "text--green"}>
                 {submitted.message}
               </p>
@@ -42,7 +42,7 @@ const Contact = () => {
                     setSubmitted(false, "", false)
                   }}
                 >
-                  spróbuj ponownie
+                  Spróbuj ponownie
                 </button>
               )}
             </div>

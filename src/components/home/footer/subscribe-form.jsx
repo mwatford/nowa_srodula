@@ -1,30 +1,35 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import Logo from "@/components/logo"
 import axios from "axios"
 
-
-const Subscribe = () => {
+const Subscribe = ({ callback }) => {
+  const form = useRef(null)
   const [email, setEmail] = useState("")
-  
+
   const submitForm = async e => {
     try {
       e.preventDefault()
 
       const data = new FormData()
       data.append("email", email)
-  
+
+      form.current.reset()
+
       await axios({
-        method: 'post',
+        method: "post",
         url: "api/subscribe.php",
         headers: { "Content-Type": "application/json" },
-        data
+        data,
       })
+
+      return callback(true, "", false)
     } catch (error) {
+      callback(true, "", true)
     }
   }
 
   return (
-    <form className="subscribe">
+    <form className="subscribe" onSubmit={e => submitForm(e)} ref={form}>
       <div className="header">
         <h2 className="title">Zostaw swój email</h2>
         <p>aby otrzymywać informacje o najnowszych promocjach</p>
@@ -35,7 +40,7 @@ const Subscribe = () => {
         placeholder="Email"
         onChange={e => setEmail(e.target.value)}
       />
-      <button className="subscribe__button" onClick={e => submitForm(e)}>SUBSKRYBUJ</button>
+      <button className="subscribe__button">SUBSKRYBUJ</button>
     </form>
   )
 }

@@ -64,10 +64,12 @@
 
     .topLink {
       order: 3;
-      grid-column: 1 / span 2;
+      grid-column: 1;
       grid-row: 3;
-      margin-top: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
       margin-left: 0;
+      place-self: start;
     }
   }
 }
@@ -131,7 +133,6 @@
     padding-bottom: 136px;
     padding-left: calc(2 * var(--gutters));
     padding-right: calc(2 * var(--gutters));
-    background-color: #fff;
 
     .google-map {
       width: 674px;

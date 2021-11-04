@@ -33,17 +33,20 @@ const About = () => {
       <div className="square" data-aos="fade-left" data-aos-delay="200">
         <h3>Zalety inwestycji:</h3>
         <ul>
+          <li>Plac zabaw z klubem malucha,</li>
           <li>Osiedle zamknięte,</li>
-          <li>Ogrzewanie podłogowe w standardzie,</li>
-          <li>Okna 3 komorowe akustyczne,</li>
-          <li>Ściany mędzy lokalami z pustaków ceramicznych akustycznych,</li>
+          <li>Osiedlowy park ze strefą relaksu,</li>
           <li>Osiedle monitorowane,</li>
+          <li>Brama wjazdowa oraz garażowa z systemem rozpoznawania tablic,</li>
+          <li>Internet światłowodowy w każdym mieszkaniu,</li>
           <li>Wideodomofony,</li>
-          <li>Całodobowa ochrona,</li>
+          <li>Ogrzewanie podłogowe w standardzie,</li>
+          <li>Okna trzy szybowe sześcio komorowe akustyczne,</li>
+          <li>Sterowanie strefowe ogrzewaniem podłogowym,</li>
+          <li>Ściany mędzy lokalami z pustaków ceramicznych akustycznych,</li>
           <li>Ogrzewanie i ciepła woda miejska,</li>
-          <li>Plac zabaw,</li>
-          <li>Stacja roweru miejskiego,</li>
           <li>Bardzo dobra komunikacja z centrum Sosnowca i Katowic,</li>
+          <li>Stacja roweru miejskiego przy osiedlu,</li>
           <li>
             Garaże podziemne, winda, sklepy, szkoły, parki, widok na Górkę
             Środulską i wiele więcej...

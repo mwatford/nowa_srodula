@@ -4,17 +4,6 @@ import anime from "animejs"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Button from "@/components/button"
-import NextIcon from "@/components/next"
-
-const animation = () => {
-  anime({
-    targets: ".strike-through",
-    width: ["0%", "100%"],
-    duration: 2000,
-    delay: 500,
-    easing: "easeInSine",
-  })
-}
 
 const Banner = () => {
   const data = useStaticQuery(graphql`
@@ -55,12 +44,6 @@ const Banner = () => {
     },
   ]
 
-  // sources = data.banner.childImageSharp.fluid
-
-  useEffect(() => {
-    animation()
-  }, [])
-
   return (
     <section className="banner col">
       <div className="banner__image">
@@ -72,7 +55,12 @@ const Banner = () => {
           Twoje miejsce <br />w Sosnowcu.
         </h2>
         <AnchorLink to="/#kontakt">
-          <Button onClick={() => {}}>Zapytaj o ofertę</Button>
+          <Button onClick={() => {}}>
+            Zapytaj o ofertę
+            <div className="icon">
+              <div className="arrow-right"></div>
+            </div>
+          </Button>
         </AnchorLink>
       </div>
     </section>

@@ -6,6 +6,7 @@
     'MIME-Version' => '1.0'
 );
 
+  $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
   $email = $_POST['email'];
 
   $content = "E-mail: $email";

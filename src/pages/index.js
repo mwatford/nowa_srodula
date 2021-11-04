@@ -14,7 +14,6 @@ import SEO from "../components/seo"
 // import { useEffect } from "react"
 // import "aos/dist/aos.css"
 
-
 const IndexPage = () => {
   // useEffect(() => {
   //   AOS.init({

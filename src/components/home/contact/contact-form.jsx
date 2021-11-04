@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 import Button from "@/components/button"
-import Envelope from '@/components/envelope'
+import Envelope from "@/components/envelope"
 
 const cloneDeep = x => JSON.parse(JSON.stringify(x))
 
@@ -27,7 +27,6 @@ class ContactForm extends React.Component {
   async submitForm(e) {
     try {
       e.preventDefault()
-
       const data = new FormData()
 
       for (const key in this.state) {
@@ -44,9 +43,11 @@ class ContactForm extends React.Component {
       window.gtag("event", "conversion", {
         send_to: "AW-392310836/UWaZCLaR7_8BELTgiLsB",
       })
-      // this.props.callback(true, "Otrzymaliśmy Twoją wiadomość!", false)
+
+      this.resetForm()
+      this.props.callback(true, "Otrzymaliśmy Twoją wiadomość!", false)
     } catch (error) {
-      // this.props.callback(true, "Wystąpił błąd!", true)
+      this.props.callback(true, "Wystąpił błąd!", true)
     }
   }
 
@@ -62,7 +63,14 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <form className="contact__form" ref={this.formRef} autoComplete="off" data-aos="fade-up" data-aos-delay="200">
+      <form
+        className="contact__form"
+        ref={this.formRef}
+        autoComplete="off"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        onSubmit={e => this.submitForm(e)}
+      >
         <div className="col">
           <label htmlFor="name" className="label">
             Imię
@@ -141,11 +149,7 @@ class ContactForm extends React.Component {
           />
           <span className="checkmark"></span>
         </label>
-        <Button
-          color="light"
-          onClick={e => this.submitForm(e)}
-          disabled={!this.state.formValid}
-        >
+        <Button color="light" onClick={() => {}}>
           Wyślij
           <div className="icon">
             <Envelope></Envelope>

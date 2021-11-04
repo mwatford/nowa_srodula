@@ -14,7 +14,7 @@
   transition: all 0.3s ease-out;
   box-shadow: -3px 6px 10px 0 #00000029;
   width: fit-content;
-  min-width: 124px;
+  // min-width: 124px;
 
   .icon {
     margin-left: 12px;
@@ -49,6 +49,7 @@
     background-color: transparent;
     border: 1px solid #293990;
     color: $dark;
+    padding: 17px 22px;
 
     .icon {
       fill: $dark;

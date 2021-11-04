@@ -10,19 +10,19 @@ const MenuIcon = ({ close }) => {
       className="menu-button"
     >
       {!close ? (
-        <g transform="translate(0.258)" className="icon">
+        <g className="icon">
           <rect
-            width="29.999"
+            width="30"
             height="2"
             transform="translate(29.741 5.714) rotate(180)"
           />
           <rect
-            width="29.999"
+            width="30"
             height="2"
             transform="translate(29.741 15.852) rotate(180)"
           />
           <rect
-            width="18.749"
+            width="18.75"
             height="2"
             transform="translate(29.741 28) rotate(180)"
           />
