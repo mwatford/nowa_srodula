@@ -2,7 +2,3 @@ node_modules/
 .cache/
 public
 images
-static
-.htaccess*
-asd
-backup
