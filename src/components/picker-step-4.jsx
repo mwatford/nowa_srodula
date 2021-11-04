@@ -5,7 +5,7 @@ import DownloadIcon from '@/components/download';
 
 const Step = ({ type, floor, flat }) => {
     const imgURL = `../../picker/${type}_karty_lokali_pietro_${floor}/${type}_karty_lokali_pietro_${floor}-${flat}.jpg`;
-    const fileURL = `../../karty/${type}_karty_lokali_pietro_${floor}.pdf`;
+    const fileURL = `../../cards/${type}_karty_lokali_pietro_${floor}.pdf`;
 
     const [displayPopup, setDisplayPopup] = useState(false);
     const imgEl = useRef(null);
